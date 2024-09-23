@@ -34,13 +34,13 @@
 <body>
     <section class="section section-main">
         <div class="container">
-            <header class="header">
-                <div class="header-menu">
+            <header class="header flex">
+                <div class="header-menu flex">
                     <div class="header-menu__button">
                         <span></span>
                     </div>
                     <nav class="header-menu__list">
-                        <ul>
+                        <ul class="flex flex-center">
                             <li><a class="header-menu__link menu-link" href="#editions">
                                 editions
                             </a></li>
@@ -85,10 +85,10 @@
                                         </svg>
 
                                         <div class="header-menu__languages">
-                                            <div class="header-menu__lenguage">
+                                            <div class="header-menu__language">
                                                 Український
                                             </div>
-                                            <div class="header-menu__lenguage"></div>
+                                            <div class="header-menu__language"></div>
                                                 English
                                             </div>
                                         </div>
@@ -99,11 +99,47 @@
                     </nav>
                 </div>  
                 
-                <div class="header-timer">
-                    
+                <div class="header-timer flex flex-center">
+                    <span>Release:</span>
+                    <div class="header-timer__values flex flex-center">
+                        <div class="header-timer__item">
+                            <div class="header-timer__item-value" id="days">0</div>
+                            <div class="header-timer__item-info" >D</div>
+                        </div>
+
+                        <div class="header-timer__item"></div>
+                            <div class="header-timer__item-value" id="hours">0</div>
+                            <div class="header-timer__item-info" >H</div>
+                        </div>
+
+                        <div class="header-timer__item"></div>
+                            <div class="header-timer__item-value" id="minutes">0</div>
+                            <div class="header-timer__item-info" >M</div>
+                        </div>
+
+                        <div class="header-timer__item"></div>
+                            <div class="header-timer__item-value" id="seconds">0</div>
+                            <div class="header-timer__item-info" >S</div>
+                        </div>
+                    </div>
                 </div>
 
             </header>
+
+            <div class="description">
+                <div class="description-title">
+                    <h1>Judo Uman</h1>
+                    <div class="description-subtitle">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        A, mollitia alias aliquam illo consequatur placeat harum voluptatibus 
+                        velit quas quaerat sint odio recusandae architecto ad unde temporibus 
+                        soluta reprehenderit officiis.
+                    </div>
+                    <div class="description-button">
+                        <span>go on a tour</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
