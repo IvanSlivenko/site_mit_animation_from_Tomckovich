@@ -1,0 +1,27 @@
+https://youtu.be/S7Gi3UnKdmA
+
+npm init
+
+
+yarn add webpack webpack-cli webpack-dev-server -D
+
+yarn add -D css-loader sass sass-loader style-loader
+
+yarn add html-webpack-plugin -D
+
+yarn add serve -D
+
+cd judo
+yarn dev
+
+
+
+
+
+
+
+--------------------------------
+
+00 : 32 : 06
+
+
