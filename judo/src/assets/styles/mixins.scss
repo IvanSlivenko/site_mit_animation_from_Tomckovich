@@ -15,11 +15,11 @@
  }
 
  @mixin hoverViolet {
-   &:hover {
+  &:hover {
     background: #9468da;
    }
    
-   &:active {
+  &:active {
     background: #6039a0;
    }
  }
