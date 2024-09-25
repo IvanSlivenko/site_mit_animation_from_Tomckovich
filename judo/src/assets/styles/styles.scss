@@ -26,17 +26,27 @@
       opacity: 0.1;
     }
       &:before{
-            background: url("../images/bg.png") no-repeat center/cover;
-            
-            // opacity: 0.3; // judo
-            // background: url("../images/club_2.png") no-repeat center/cover; // judo
-            // background: url("../images/ipon.jpg") no-repeat center/cover; // judo
-            // background: url("../images/ipon2.jpg") no-repeat center/cover; // judo
-            
-                   
+            background: url("../images/bg.png") no-repeat center/cover;                  
         }
+
+      //   &:before{ //JUDO
+      //     // opacity: 0.5; // judo
+      //     background: url("../images/club_2.png") no-repeat center/cover ; // judo
+      //     width: 70%;
+      //     // height: 100%;
+      //     display: block;
+      //     position: absolute;
+      //     top: 30%;
+      //     right: 0;
+      //     z-index: -1;
+                 
+      // }  
+    }
+    &-dual {
+      margin-top: 54px;
     }
 }
+
 
 .header {   
   align-items: center;
@@ -211,7 +221,8 @@
 }
 .description{
   margin-top: 7%;
-  max-width: 540px;
+  // max-width: 540px;
+  max-width: 300px; // JUDO
   animation: move 1s ease-in-out ;
 
   &-title {
@@ -230,10 +241,129 @@
     margin-top: 26px;
   }
 
+ 
+
   &-button {
     @include button();
     @include hoverViolet();
     margin-top: 36px;
+  }
+}
+
+.editions {
+  &-list {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 350px);
+    // grid-template-columns: repeat(4, 467px);// JUDO
+    column-gap: 16px;
+    justify-content: center;
+  }
+
+  &-item {
+    background: linear-gradient(180deg, #141615 0%, #1C2023 100%);
+    border-radius: 6px;
+    padding: 17px;
+    transition: transform 0.25s ease-in-out;
+    transform: translateX(0);
+
+    &__img {
+      border-radius: 6px;
+      overflow: hidden;
+      width: 100%;
+      height: 172px;
+      @include bg;
+
+    }
+
+    &__title {
+      margin-top: 20px;
+      font-weight: 700;
+      line-height: 19px;
+      text-align: center;
+    }
+
+    &__subtitle {
+      color: $sea;
+      line-height: 19px;
+      font-weight: 500;
+      text-align: center;
+      margin: 10px 0 32px 0;
+      
+    }
+
+    &__description {
+      color: $grey;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+
+    &__price {
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 23px;
+      color: $white;
+      margin: 6px 0 14px 0;
+      text-align: right;
+    }
+
+    &__btn {
+      @include button;
+      @include hoverViolet;
+      padding: 8px 18px;
+      font-size: 13px;
+      line-height: 15px;
+      margin-left: auto;
+
+    }
+  }
+
+  
+}
+
+.dual {
+  column-gap: 5%;
+  margin-top: 20px;
+  transition:  column-gap 0.5s;
+
+  &-description {
+    max-width: 410px;
+    p {
+      color: $sea;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 22px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+    &__info {
+      margin-top: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    &__price {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    &__button {
+      @include button($orange);
+      @include hoverOrange();
+      padding: 10px 19px;
+      margin-left: 10px;
+      font-weight: 500;
+      
+
+    }
   }
 }
 
