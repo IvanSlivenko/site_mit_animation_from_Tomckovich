@@ -424,7 +424,17 @@
     background: $dark;
     border-radius: 6px;
     padding: 9px 26px;
-
+    font-weight: 500;
+    line-height: 16px;
+    color: $white;
+    display: inline-block;
+    cursor: pointer;
+    margin: 28px auto 0 auto;
+    transition: background 0.25s;
+    text-transform: uppercase;
+    &:hover {
+      background: #525c67;
+    }
   }
 }
 
