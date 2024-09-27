@@ -472,7 +472,7 @@
   &-switch {
     margin-top: 20px;
     column-gap: 15px;
-    
+
     &__checkbox {
       width: 54px;
       height: 25px;
@@ -496,7 +496,7 @@
       }
 
       span {
-        border-radius: 50px;
+        border-radius: 50%;
         background: $violet;
         width: 18px;
         height: 18px;
@@ -505,12 +505,107 @@
         left: 4px;
         transform: translate(0);
         transition: transform 0.25s;
-
       }
     }
 
+    &__title {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $dark;
+
+      &.active {
+        color: $white;
+      }
+    }
+  }
+
+  &-info {
+    margin-top: 96px;
+    column-gap: 5%;
+    transition: column-gap 0.5s;
+
+    &.reverse {
+      flex-direction: row-reverse;
+
+      .explore {
+        &-img {
+          justify-content: start;
+        }
+
+        &-description {
+          text-align: right;
+        }
+
+        &-button {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &-img {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    &__wrap {
+      width: 300px;
+      height: 300px;
+      border-radius: 12px;
+      @include bg;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 61px;
+        height: 140px;
+        background: $orange;
+        filter: blur(75px);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        opacity: 0.8;
+      }
+
+      img {
+        max-width: unset;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &-description {
+    min-width: max-content;
+    width: 50%;
+
+    ul {
+      flex-direction: column;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 36px;
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  &-button {
+    @include button($orange);
+    @include hoverOrange;
+    margin-top: 28px;
   }
 }
+
+
 
 @keyframes gravitation {
   0% {
