@@ -1,6 +1,17 @@
+import 'swiper/swiper-bundle.css'
 import '../styles/reset.scss';
-import '../styles/mixins.scss';
 import '../styles/styles.scss';
+
+import Swiper from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// import {Navigation} from 'swiper';
+// Swiper.use([Navigation]);
+
+
 
 const checkboxes = {
     requirements: ["minimum", "recommended" ],
@@ -74,6 +85,7 @@ const startTimer = (date) => {
 startTimer("October 29 2024 19:00:00");
 // ------------------------------------------------------------------- timer End
 
+
 const handleVideo = ({ target }) => {
     const info = target.parentElement;
     isPlay = !isPlay;
@@ -89,13 +101,41 @@ const handleCheckbox = ({ currentTarget: {checked, name} }) => {
     const { active } = classes;
     const value = checkboxes[name][Number(checked)];
     const list =  document.getElementById(value);
+    const tabs = document.querySelectorAll(`[data-${name}]`);
+    const siblings = list.parentElement.children;
 
+    for(const item of siblings) item.classList.remove(active);
+    for(const tab of tabs) {
+        tab.classList.remove(active);
+        tab.dataset[name] === value && tab.classList.add(active);
+    }
+    
     list.classList.add(active);
+
 ;
 
 
     
 };
+
+const initSlider = () => {
+    new Swiper(".swiper",{
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 20,
+        initialSlide: 2,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        // modules: [Navigation, Pagination],
+
+
+    })
+}
+
+initSlider();
+
 menuButton.addEventListener('click', toggleMenu);
 videoButton.addEventListener('click', handleVideo);
 menuLink.forEach((link) => link.addEventListener('click', scrollTosection));
