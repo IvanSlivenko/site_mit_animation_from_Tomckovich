@@ -2,6 +2,47 @@
 @import '../styles/mixins.scss';
 
 .section {
+  &.hidden {
+    .editions {
+      &-item {
+        transition: transform 0s;
+        transform: translateX(-2000px);
+
+      }
+    }
+
+    h2 {
+      transition: opacity 0s;
+      opacity: 0;
+    }
+
+    .dual, 
+    .explore-info {
+      transition: column-gap 0s;
+      column-gap: 50%;
+
+      
+    }
+
+    .video {
+      transition: transform 0s ;
+      transform: scale(0);
+
+    }
+
+    .news,
+    .faq-item {
+      transition: transform 0s;
+      transform: translateX(-100%);
+
+        
+    }
+
+  }
+
+
+
+
   &-main {
     padding-top: 40px;
     position: relative;
@@ -195,7 +236,7 @@
               ul {
                 opacity: 1;
                 transform: translateX(0);
-                transition: opacity 0.2s, transform 0.25s;
+                transition: opacity 0.2s, transform 0.7s;
               }
             }
           }
@@ -278,8 +319,28 @@
     background: linear-gradient(180deg, #141615 0%, #1C2023 100%);
     border-radius: 6px;
     padding: 17px;
-    transition: transform 0.25s ease-in-out;
+    // transition: transform 0.25s ease-in-out;
     transform: translateX(0);
+
+    &:nth-child(1){
+      // transition-delay: 0.25s;
+      animation: move 5s ease-in ;
+    }
+
+    &:nth-child(2){
+      // transition-delay: 0.25s;
+      animation: move 4s ease-in ;
+    }
+
+    &:nth-child(3){
+      // transition-delay: 0.25s;
+      animation: move 3s ease-in ;
+    }
+
+    &:last-child {
+      // transition-delay: 0.5s;
+      animation: move 2s ease-in ;
+    }
 
     &__img {
       border-radius: 6px;
@@ -341,7 +402,7 @@
 .dual {
   column-gap: 5%;
   margin-top: 20px;
-  transition:  column-gap 0.5s;
+  transition:  column-gap 7s;
 
   &-description {
     max-width: 410px;
@@ -401,7 +462,7 @@
 .video {
   position: relative;
   margin-top: 32px;
-  transition: transform 0.5s;
+  transition: transform 7s;
   transform: scale(1);
 
   video {
@@ -531,7 +592,7 @@
   &-info {
     margin-top: 96px;
     column-gap: 5%;
-    transition: column-gap 0.5s;
+    transition: column-gap 4s;
 
     &.reverse {
       flex-direction: row-reverse;
@@ -615,7 +676,7 @@
 
 .news {
   margin-top: 32px;
-  transition: transform 0.5s;
+  transition: transform 1s;
   transform: translate(0);
 
   &-item {
@@ -711,8 +772,23 @@
   }
 
   &-item {
-    transition: transform 0.4s;
+    transition: transform 1s;
     transform: translate(0);
+
+    &:nth-child(1){
+      // transition-delay: 1s;
+      animation: move 1s ease-in ;
+    }
+
+    &:nth-child(2){
+      // transition-delay: 2s;
+      animation: move 2s ease-in ;
+    }
+
+    &:nth-child(3){
+      // transition-delay: 3s;
+      animation: move 3s ease-in ;
+    }
 
     &__header {
       width: 100%;
@@ -899,18 +975,19 @@
     top: 50%;
     transform: translateY(-50%);
     width: 32px;
-    height: 32px;background: #8c96a0;
+    height: 32px;
+    // background: #8c96a0;
     border-radius: 6px;
     z-index: 9;
-    cursor: pointer;
+    // cursor: pointer;
     transition: background 0.25s;
     
     &:hover {
-      background: $violet;
+      // background: $violet;
     }
 
     svg {
-      fill: #fff;
+      fill: #424141;
     }
 
     &-prev {
@@ -949,3 +1026,4 @@
     transform: translateX(0px);
   }
 }
+

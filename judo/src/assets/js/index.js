@@ -1,12 +1,12 @@
-import 'swiper/swiper-bundle.css'
+// import 'swiper/swiper-bundle.css'
 import '../styles/reset.scss';
 import '../styles/styles.scss';
 
 import Swiper from 'swiper';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 // import {Navigation} from 'swiper';
 // Swiper.use([Navigation]);
@@ -31,6 +31,10 @@ const menuLink = document.querySelectorAll('.menu-link');
 const menuButton =  document.querySelector('.header-menu__button'); 
 const video = document.getElementById('video');
 const videoButton = document.querySelector('.video-btn');
+const fagItem = document.querySelectorAll('.faq-item');
+const sections = document.querySelectorAll('.section');
+
+
 
 
 
@@ -136,8 +140,27 @@ const initSlider = () => {
 
 initSlider();
 
+const handleFaqItem = ({ currentTarget: target }) => {
+    target.classList.toggle(classes.opened)
+    const isOpened = target.classList.contains(classes.opened);
+    const height = target.querySelector('p').clientHeight;
+    const content = target.querySelector('.faq-item__content');
+
+    content.style.height = `${isOpened ? height : 0 }px`
+}
+
+const handleScroll = () => {
+    const { scrollY: y, innerHeight: h } = window;
+    sections.forEach((sec)=>{
+        if(y > sec.offsetTop - h / 1.2) sec.classList.remove(classes.hidden);
+    })
+    
+}
+
+window.addEventListener('scroll', handleScroll);
 menuButton.addEventListener('click', toggleMenu);
 videoButton.addEventListener('click', handleVideo);
 menuLink.forEach((link) => link.addEventListener('click', scrollTosection));
 
 checkbox.forEach((box) => box.addEventListener('click', handleCheckbox));
+fagItem.forEach((item) => item.addEventListener('click', handleFaqItem));
