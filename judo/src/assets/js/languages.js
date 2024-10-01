@@ -10,7 +10,7 @@ export const languages = {
 
     },
     ua: {
-        editions: "видання",
+        editions: "Вихованці",
         controller: "Відео",
         about: "Про нас",
         explore: "Дослідження",

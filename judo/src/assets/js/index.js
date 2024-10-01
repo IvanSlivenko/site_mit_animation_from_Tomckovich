@@ -140,7 +140,7 @@ const initSlider = () => {
     })
 }
 
-initSlider();
+
 
 const handleFaqItem = ({ currentTarget: target }) => {
     target.classList.toggle(classes.opened)
@@ -176,8 +176,8 @@ const toggleLanguage = ({ target }) => {
     localStorage.setItem('lang', lang);
     setTexts();
 }
-
-
+initSlider();
+setTexts();
 window.addEventListener('scroll', handleScroll);
 menuButton.addEventListener('click', toggleMenu);
 videoButton.addEventListener('click', handleVideo);
