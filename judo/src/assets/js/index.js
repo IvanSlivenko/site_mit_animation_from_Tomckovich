@@ -1,6 +1,7 @@
 // import 'swiper/swiper-bundle.css'
 import '../styles/reset.scss';
 import '../styles/styles.scss';
+import { languages } from './languages';
 
 import Swiper from 'swiper';
 
@@ -33,6 +34,7 @@ const video = document.getElementById('video');
 const videoButton = document.querySelector('.video-btn');
 const fagItem = document.querySelectorAll('.faq-item');
 const sections = document.querySelectorAll('.section');
+const language =  document.querySelectorAll('.language');
 
 
 
@@ -157,6 +159,25 @@ const handleScroll = () => {
     
 }
 
+const setTexts = () => {
+    const lang = localStorage.getItem('lang') || 'en';
+    const content = languages[lang]
+
+    Object.entries(content).forEach(([key, value])=>{
+        const items = document.querySelectorAll(`[data-text="${key}"]`)
+        items.forEach((item)=>{item.innerText=value})
+    })
+}
+
+const toggleLanguage = ({ target }) => {
+    const { lang } = target.dataset;
+
+    if(!lang) return;
+    localStorage.setItem('lang', lang);
+    setTexts();
+}
+
+
 window.addEventListener('scroll', handleScroll);
 menuButton.addEventListener('click', toggleMenu);
 videoButton.addEventListener('click', handleVideo);
@@ -164,3 +185,4 @@ menuLink.forEach((link) => link.addEventListener('click', scrollTosection));
 
 checkbox.forEach((box) => box.addEventListener('click', handleCheckbox));
 fagItem.forEach((item) => item.addEventListener('click', handleFaqItem));
+language.forEach((lang) => lang.addEventListener('click', toggleLanguage));
