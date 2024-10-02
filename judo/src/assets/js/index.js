@@ -26,6 +26,21 @@ const classes = {
     active: 'active'
 }
 
+const values = [
+         {
+            price: 500,
+            title: "Standard Edition",
+         },
+         {
+            price: 600,
+            title: "Standard Edition",
+         },
+         {
+            price: 700,
+            title: "Deluxe Edition",
+         }
+]
+
 const checkbox = document.querySelectorAll('.checkbox');
 const  header = document.querySelector('.header');
 const menuLink = document.querySelectorAll('.menu-link');
@@ -35,6 +50,11 @@ const videoButton = document.querySelector('.video-btn');
 const fagItem = document.querySelectorAll('.faq-item');
 const sections = document.querySelectorAll('.section');
 const language =  document.querySelectorAll('.language');
+const BuyButton =  document.querySelectorAll('.buy-button');
+const modal = document.querySelector('.modal');
+const modalTitlte = document.querySelector('.modal-version');
+const modalPrice = document.querySelector('.modal-total__price');
+const modalClose = document.querySelector('.modal-close');
 
 
 
@@ -176,13 +196,28 @@ const toggleLanguage = ({ target }) => {
     localStorage.setItem('lang', lang);
     setTexts();
 }
+
+const handleBuyButton = ({ currentTarget: target }) => {
+    const { value } = target.dataset;
+
+    if(!value)return;
+
+    const {  price, title } = values[value];
+    modalTitlte.innerText = title;
+    modalPrice.innerText = `${price} грн.`;
+    modal.classList.add(classes.opened);
+}
+
+const closeModal = () => modal.classList.remove(classes.opened);
+
 initSlider();
 setTexts();
 window.addEventListener('scroll', handleScroll);
 menuButton.addEventListener('click', toggleMenu);
 videoButton.addEventListener('click', handleVideo);
+modalClose.addEventListener('click', closeModal);
 menuLink.forEach((link) => link.addEventListener('click', scrollTosection));
-
 checkbox.forEach((box) => box.addEventListener('click', handleCheckbox));
 fagItem.forEach((item) => item.addEventListener('click', handleFaqItem));
 language.forEach((lang) => lang.addEventListener('click', toggleLanguage));
+BuyButton.forEach((btn) => btn.addEventListener('click', handleBuyButton));

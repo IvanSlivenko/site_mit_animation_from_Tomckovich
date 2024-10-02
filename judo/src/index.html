@@ -144,7 +144,7 @@
                         velit quas quaerat sint odio recusandae architecto ad unde temporibus 
                         soluta reprehenderit officiis.
                     </div>
-                    <div class="description-button">
+                    <div class="description-button buy-button" data-value="0">
                         Відвідати екскурсію
                     </div>
                 </div>
@@ -177,7 +177,7 @@
                             <div class="editions-item__price">
                                 На татамі: 7 років
                             </div>
-                            <div class="editions-item__btn button-buy">
+                            <div class="editions-item__btn buy-button " data-value="0">
                                 Детальніше
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                             <div class="editions-item__price">
                                 На татамі: 5 років
                             </div>
-                            <div class="editions-item__btn button-buy">
+                            <div class="editions-item__btn buy-button" data-value="1">
                                 Детальніше
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                             <div class="editions-item__price">
                                 На татамі: 7 років
                             </div>
-                            <div class="editions-item__btn button-buy">
+                            <div class="editions-item__btn buy-button" data-value="2">
                                 Детальніше
                             </div>
                         </div>
@@ -249,7 +249,7 @@
                             <div class="editions-item__price">
                                 На татамі: 5 років
                             </div>
-                            <div class="editions-item__btn button-buy">
+                            <div class="editions-item__btn buy-button" data-value="3">
                                 Детальніше
                             </div>
                         </div>
@@ -740,12 +740,30 @@
             <div class="modal-title">
                 JUDO UMAN
             </div>
-            <div class="modal-subtitle">
-                info
-            </div>
+            <div class="modal-version"></div>
 
             <form class="form">
-                <div class="form-group">
+                <div class="form-group full">
+                    <label for="card">Credit Card:</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="0000 0000 0000 0000"
+                      id="card"
+                    />
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="expire">expire:</label>
+                    <input type="text" required placeholder="mm/yy" id="expire" />
+                  </div>
+        
+                  <div class="form-group">
+                    <label for="ccv">ccv:</label>
+                    <input type="text" required placeholder="***" id="ccv" />
+                  </div>
+
+                <div class="form-group full">
                     <label for="instans">INSTANT</label>
                     <input type="text" required placeholder="John Doe" id="instant"/>
                 </div>
@@ -768,7 +786,7 @@
                     <div class="modal-total__text">YOUR TOTAL SUMMA:</div>
                     <div class="modal-total__price">{ PRICE }</div>
                 </div>
-                <button type="submit" class="modal-submit">
+                <button type="submit" class="modal-submit" data-value="0">
                      buy NOW
                 </button>
             </form>
