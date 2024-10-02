@@ -1182,6 +1182,25 @@
 
 }
 
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+    z-index: 998;
+  }
+}
+
 @keyframes gravitation {
   0% {
        transform: translateY(-15px) ;

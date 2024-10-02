@@ -55,6 +55,7 @@ const modal = document.querySelector('.modal');
 const modalTitlte = document.querySelector('.modal-version');
 const modalPrice = document.querySelector('.modal-total__price');
 const modalClose = document.querySelector('.modal-close');
+const overlay = document.querySelector('.overlay');
 
 
 
@@ -206,9 +207,14 @@ const handleBuyButton = ({ currentTarget: target }) => {
     modalTitlte.innerText = title;
     modalPrice.innerText = `${price} грн.`;
     modal.classList.add(classes.opened);
+    overlay.classList.add(classes.opened);
+    
 }
 
-const closeModal = () => modal.classList.remove(classes.opened);
+const closeModal = () => {
+    modal.classList.remove(classes.opened);
+    overlay.classList.remove(classes.opened);
+}
 
 initSlider();
 setTexts();
